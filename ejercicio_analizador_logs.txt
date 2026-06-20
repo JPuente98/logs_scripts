@@ -1,0 +1,59 @@
+Analizador de Logs - Ejercicio
+
+1.  Crea un archivo llamado:
+
+application.log
+
+Y pega lo siguiente:
+
+2026-06-03 08:00:01 INFO Application started 2026-06-03 08:00:05 INFO
+User login successful: juan 2026-06-03 08:01:12 WARNING High memory
+usage detected 2026-06-03 08:01:25 INFO Processing file report.csv
+2026-06-03 08:01:30 ERROR Failed to connect to database 2026-06-03
+08:02:01 INFO Retrying database connection 2026-06-03 08:02:10 INFO
+Database connection established 2026-06-03 08:03:45 INFO Processing file
+customers.csv 2026-06-03 08:04:01 WARNING Disk space below 20%
+2026-06-03 08:04:15 ERROR File not found: inventory.csv 2026-06-03
+08:05:00 INFO Scheduled job started 2026-06-03 08:05:45 INFO Scheduled
+job completed 2026-06-03 08:06:01 ERROR API request timeout 2026-06-03
+08:06:20 INFO API request retried successfully 2026-06-03 08:07:10
+WARNING CPU usage above threshold 2026-06-03 08:08:00 INFO User logout:
+juan 2026-06-03 08:09:30 ERROR Failed to send email notification
+2026-06-03 08:10:00 INFO Application shutdown initiated 2026-06-03
+08:10:05 INFO Application shutdown completed
+
+Primer reto
+
+Generar esta salida:
+
+===== LOG SUMMARY =====
+
+INFO: 11 WARNING: 3 ERROR: 4
+
+Total Entries: 19
+
+Segundo reto
+
+Generar además:
+
+===== ERRORS =====
+
+2026-06-03 08:01:30 ERROR Failed to connect to database 2026-06-03
+08:04:15 ERROR File not found: inventory.csv 2026-06-03 08:06:01 ERROR
+API request timeout 2026-06-03 08:09:30 ERROR Failed to send email
+notification
+
+Tercer reto (nivel intermedio real)
+
+Generar además:
+
+===== ERROR PERCENTAGE =====
+
+INFO: 57.89% WARNING: 15.79% ERROR: 21.05%
+
+Restricciones
+
+Intentar resolver usando únicamente: - open() - for - if - dict -
+split()
+
+Sin usar: - pandas - regex - collections.Counter
