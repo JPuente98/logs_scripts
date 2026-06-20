@@ -1,4 +1,4 @@
-def main():
+def showLogContent():
 
     levels = {"INFO":0,
              "WARNING":0,
@@ -18,4 +18,4 @@ def main():
     except FileNotFoundError:
         print("Log file not found")
 
-main()
+showLogContent()
